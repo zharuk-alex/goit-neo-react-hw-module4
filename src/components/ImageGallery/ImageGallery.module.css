@@ -1,0 +1,13 @@
+.imageGallery {
+  --indent: 24px;
+  --items: 4;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+
+.imageGalleryItem {
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
+}
