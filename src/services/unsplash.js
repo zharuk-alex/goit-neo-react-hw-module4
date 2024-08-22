@@ -1,13 +1,14 @@
 import axios from "axios";
 
 axios.defaults.baseURL = "https://api.unsplash.com/";
-const API_KEY = "S8sq9qcnVnL74Acir7fAHSEHkV84OCo6feobVTgtTF4";
+const apiKey = import.meta.env.VITE_UNSPLASH_API_KEY;
 
 export const searchPhotos = (params) => {
+  console.log(apiKey);
   return axios
     .get("/search/photos", {
       params: {
-        client_id: API_KEY,
+        client_id: apiKey,
         ...params,
       },
     })
